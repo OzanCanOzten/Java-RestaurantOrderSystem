@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 17 Kas 2018, 11:01:05
+-- Üretim Zamanı: 25 Kas 2018, 15:08:48
 -- Sunucu sürümü: 10.1.36-MariaDB
 -- PHP Sürümü: 5.6.38
 
@@ -36,7 +36,6 @@ CREATE TABLE `orders` (
   `order_count` int(3) NOT NULL,
   `order_price` double NOT NULL,
   `order_time` datetime NOT NULL,
-  `prepare_status` varchar(3) COLLATE utf8_turkish_ci NOT NULL,
   `delivery_status` varchar(3) COLLATE utf8_turkish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
@@ -44,12 +43,20 @@ CREATE TABLE `orders` (
 -- Tablo döküm verisi `orders`
 --
 
-INSERT INTO `orders` (`order_id`, `product_id`, `person_id`, `table_no`, `order_count`, `order_price`, `order_time`, `prepare_status`, `delivery_status`) VALUES
-(5, 4, 4, 6, 3, 9, '2018-11-16 23:49:21', 'W', 'W'),
-(6, 6, 4, 8, 4, 40, '2018-11-16 23:53:06', 'W', 'W'),
-(7, 4, 4, 9, 9, 27, '2018-11-16 23:54:34', 'W', 'W'),
-(8, 6, 4, 3, 3, 30, '2018-11-16 23:57:30', 'F', 'F'),
-(9, 3, 4, 3, 9, 225, '2018-11-17 08:31:12', 'F', 'F');
+INSERT INTO `orders` (`order_id`, `product_id`, `person_id`, `table_no`, `order_count`, `order_price`, `order_time`, `delivery_status`) VALUES
+(5, 3, 4, 7, 3, 9, '2018-11-16 23:49:21', 'W'),
+(6, 6, 4, 8, 4, 40, '2018-11-16 23:53:06', 'W'),
+(7, 4, 4, 9, 9, 27, '2018-11-16 23:54:34', 'W'),
+(8, 6, 4, 3, 3, 30, '2018-11-16 23:57:30', 'W'),
+(10, 3, 4, 5, 7, 175, '2018-11-18 12:23:30', 'F'),
+(11, 1, 4, 7, 9, 45, '2018-11-18 12:24:54', 'W'),
+(12, 3, 4, 7, 0, 0, '2018-11-18 12:25:11', 'F'),
+(13, 1, 4, 0, 0, 0, '2018-11-18 12:30:51', 'F'),
+(14, 1, 4, 1, 0, 0, '2018-11-18 12:30:57', 'F'),
+(15, 1, 4, 0, 0, 0, '2018-11-18 13:04:34', 'F'),
+(16, 7, 4, 6, 8, 30, '2018-11-23 13:31:30', 'W'),
+(17, 4, 4, 11, 5, 125, '2018-11-23 15:08:09', 'W'),
+(18, 1, 4, 5, 12, 60, '2018-11-23 19:48:27', 'W');
 
 -- --------------------------------------------------------
 
@@ -99,7 +106,8 @@ INSERT INTO `product` (`product_id`, `product_name`, `product_count`, `price`) V
 (1, 'Ürün1', 20, 5),
 (3, 'Ürün2', 30, 25),
 (4, 'Ürün3', 10, 3),
-(6, 'Deneme1', 30, 10);
+(6, 'Deneme1', 30, 10),
+(7, 'Yemek1', 90, 25);
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -132,7 +140,7 @@ ALTER TABLE `product`
 -- Tablo için AUTO_INCREMENT değeri `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `personel`
@@ -144,7 +152,7 @@ ALTER TABLE `personel`
 -- Tablo için AUTO_INCREMENT değeri `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

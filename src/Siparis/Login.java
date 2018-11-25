@@ -1,6 +1,7 @@
 
 package Siparis;
 
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -48,8 +49,18 @@ public class Login extends javax.swing.JFrame {
                 txtUsernameActionPerformed(evt);
             }
         });
+        txtUsername.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUsernameKeyPressed(evt);
+            }
+        });
 
         txtPW.setText("Garson");
+        txtPW.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPWKeyPressed(evt);
+            }
+        });
 
         jButton1.setText("Giriş");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +129,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        LoginButton();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    public void LoginButton(){
         String username = txtUsername.getText();
         String pw = String.valueOf(txtPW.getPassword()); 
         String query;
@@ -170,7 +185,20 @@ public class Login extends javax.swing.JFrame {
             } catch (Exception e) {
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
+    
+    private void txtUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            LoginButton();
+            txtUsername.requestFocus();
+        }        
+    }//GEN-LAST:event_txtUsernameKeyPressed
+
+    private void txtPWKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPWKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            LoginButton();
+        } 
+    }//GEN-LAST:event_txtPWKeyPressed
 
     /**
      * @param args the command line arguments
