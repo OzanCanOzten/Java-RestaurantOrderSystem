@@ -43,7 +43,7 @@ public class Login extends javax.swing.JFrame {
 
         lblPW.setText("Şifre");
 
-        txtUsername.setText("Garson");
+        txtUsername.setText("Admin");
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameActionPerformed(evt);
@@ -55,7 +55,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        txtPW.setText("Garson");
+        txtPW.setText("Admin");
         txtPW.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtPWKeyPressed(evt);

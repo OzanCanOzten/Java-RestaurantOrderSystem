@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 25 Kas 2018, 15:08:48
+-- Üretim Zamanı: 06 Ara 2018, 23:25:30
 -- Sunucu sürümü: 10.1.36-MariaDB
 -- PHP Sürümü: 5.6.38
 
@@ -49,14 +49,15 @@ INSERT INTO `orders` (`order_id`, `product_id`, `person_id`, `table_no`, `order_
 (7, 4, 4, 9, 9, 27, '2018-11-16 23:54:34', 'W'),
 (8, 6, 4, 3, 3, 30, '2018-11-16 23:57:30', 'W'),
 (10, 3, 4, 5, 7, 175, '2018-11-18 12:23:30', 'F'),
-(11, 1, 4, 7, 9, 45, '2018-11-18 12:24:54', 'W'),
+(11, 3, 4, 7, 9, 225, '2018-11-18 12:24:54', 'W'),
 (12, 3, 4, 7, 0, 0, '2018-11-18 12:25:11', 'F'),
 (13, 1, 4, 0, 0, 0, '2018-11-18 12:30:51', 'F'),
 (14, 1, 4, 1, 0, 0, '2018-11-18 12:30:57', 'F'),
 (15, 1, 4, 0, 0, 0, '2018-11-18 13:04:34', 'F'),
-(16, 7, 4, 6, 8, 30, '2018-11-23 13:31:30', 'W'),
-(17, 4, 4, 11, 5, 125, '2018-11-23 15:08:09', 'W'),
-(18, 1, 4, 5, 12, 60, '2018-11-23 19:48:27', 'W');
+(16, 7, 4, 6, 8, 30, '2018-11-23 13:31:30', 'F'),
+(17, 3, 4, 11, 6, 150, '2018-11-23 15:08:09', 'W'),
+(18, 1, 4, 5, 12, 60, '2018-11-23 19:48:27', 'W'),
+(19, 6, 4, 4, 6, 60, '2018-11-25 16:13:27', 'W');
 
 -- --------------------------------------------------------
 
@@ -81,9 +82,10 @@ CREATE TABLE `personel` (
 --
 
 INSERT INTO `personel` (`person_id`, `name`, `surname`, `username`, `password`, `authority`, `phone`, `email`, `status`) VALUES
-(3, 'Admin', 'Admin', 'Admin', 'Admin', 'A', 5001234567, 'admin@mail.com', 'W'),
-(4, 'Garson', 'Garson', 'Garson', 'Garson', 'G', 5009876543, 'garson@mail.com', 'W'),
-(5, 'Aşçı', 'Mutfak', 'Mutfak', 'Mutfak', 'M', 500987651, 'mutfak@mail.com', 'W');
+(3, 'Admin', 'User', 'Admin', 'Admin', 'A', 5001234567, 'admin@mail.com', 'W'),
+(4, 'Garson', 'User', 'Garson', 'Garson', 'G', 5009876543, 'garson@mail.com', 'W'),
+(5, 'Aşçı', 'User', 'Mutfak', 'Mutfak', 'M', 500987651, 'mutfak@mail.com', 'W'),
+(6, 'Ozan', 'Özten', 'Ozz', '123', 'A', 1123124125, 'ozt@mail.com', 'W');
 
 -- --------------------------------------------------------
 
@@ -107,7 +109,8 @@ INSERT INTO `product` (`product_id`, `product_name`, `product_count`, `price`) V
 (3, 'Ürün2', 30, 25),
 (4, 'Ürün3', 10, 3),
 (6, 'Deneme1', 30, 10),
-(7, 'Yemek1', 90, 25);
+(7, 'Yemek1', 90, 25),
+(8, 'Kola', 5, 300);
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -140,19 +143,19 @@ ALTER TABLE `product`
 -- Tablo için AUTO_INCREMENT değeri `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `personel`
 --
 ALTER TABLE `personel`
-  MODIFY `person_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `person_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

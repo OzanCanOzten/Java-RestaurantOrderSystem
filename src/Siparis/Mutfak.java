@@ -36,18 +36,21 @@ public class Mutfak extends javax.swing.JFrame {
     public Mutfak() {
         initComponents();
         tableResult();
+        
+        String fullname = ( Login.name + " "+ Login.surname);   
+        lblNameSurname.setText(fullname);
         // Garson ekranından girilen siparişler eşzamanlı olarak mutfak ekranına düşebilmesi için timer'a ihtiyaç duyuldu.
         
-//         TimerTask task = new TimerTask() {
-//            @Override
-//            public void run() {
-//                // Tablo 5sn'de bir yeniden çağırılır.
-//                tableResult();
-//            }
-//        };
-//        
-//        tm = new Timer();
-//        tm.schedule(task, 0, 10000);
+        //  TimerTask task = new TimerTask() {
+        //  @Override
+        //  public void run() {  // Tablo 5sn'de bir yeniden çağırılır. 
+        //   tableResult();
+        //  }
+        //  };
+        //        
+        //  tm = new Timer();
+        //  tm.schedule(task, 0, 10000);
+        
     }
 
       public void tableResult() {
@@ -233,9 +236,6 @@ public class Mutfak extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /*
          * Set the Nimbus look and feel
@@ -248,7 +248,7 @@ public class Mutfak extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

@@ -132,7 +132,7 @@ public class AddProduct extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(rootPane, "Ekleme Hatası");
              }
             } catch (Exception e) {
-                System.err.println("Ekleme Hatasi : " + e);
+                JOptionPane.showMessageDialog(rootPane, "Ekleme Hatası" + e);
             }
                 Admin admin = new Admin();
                 admin.setVisible(true);
